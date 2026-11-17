@@ -1,0 +1,13 @@
+//- Button or link with ghost modifier and optional icon block
+mixin btn(text, href = null, variant = 'primary')
+  - const classes = ['btn', variant === 'ghost' ? 'btn--ghost' : '']
+  if href
+    a(href=href class=classes)&attributes(attributes)
+      if block
+        block
+      span= text
+  else
+    button(type="submit" class=classes)&attributes(attributes)
+      if block
+        block
+      span= text

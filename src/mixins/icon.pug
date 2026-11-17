@@ -1,0 +1,22 @@
+//- SVG icon sprite reference and custom service illustrations
+mixin icon(name, size = 16)
+  case name
+    when 'service-web'
+      svg(width="40" height="30" viewBox="0 0 40 30" aria-hidden="true")&attributes(attributes)
+        rect(x="2" y="2" width="36" height="24" fill="#8b95a1")
+        rect(x="7" y="7" width="26" height="14" fill="#8fd18f")
+    when 'service-motion'
+      svg(width="36" height="32" viewBox="0 0 36 32" aria-hidden="true")&attributes(attributes)
+        rect(x="2" y="2" width="32" height="28" fill="#5b6b82")
+        rect(x="8" y="8" width="20" height="16" fill="#6aa7e0")
+    when 'service-print'
+      svg(width="36" height="32" viewBox="0 0 36 32" aria-hidden="true")&attributes(attributes)
+        rect(x="8" y="2" width="20" height="10" fill="#f2c230")
+        rect(x="2" y="12" width="32" height="14" fill="#7d8796")
+    when 'check-circle'
+      svg(width="24" height="24" viewBox="0 0 24 24" aria-hidden="true")&attributes(attributes)
+        circle(cx="12" cy="12" r="12" fill="#2CD5C4")
+        path(d="M7 12.5l3.5 3.5L17 9" stroke="#fff" stroke-width="2" fill="none")
+    default
+      svg(width=size height=size aria-hidden="true")&attributes(attributes)
+        use(href=`#i-${name}`)

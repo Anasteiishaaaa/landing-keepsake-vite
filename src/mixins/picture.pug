@@ -1,0 +1,23 @@
+//- Responsive picture element with AVIF, WebP and JPEG fallback
+mixin picture(name, alt, width = 358, height = 282, lazy = true, imgClass = 'work-card__img', sizes = '(min-width: 1280px) 358px, (min-width: 768px) 50vw, 100vw')
+  picture
+    source(
+      type="image/avif"
+      srcset=`/src/assets/images/${name}-180.avif 180w, /src/assets/images/${name}-358.avif 358w`
+      sizes=sizes
+    )
+    source(
+      type="image/webp"
+      srcset=`/src/assets/images/${name}-180.webp 180w, /src/assets/images/${name}-358.webp 358w`
+      sizes=sizes
+    )
+    img(
+      class=imgClass
+      src=`/src/assets/images/${name}-358.jpg`
+      alt=alt
+      width=width
+      height=height
+      loading=lazy ? 'lazy' : false
+      decoding="async"
+      fetchpriority=lazy ? false : 'high'
+    )

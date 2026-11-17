@@ -1,0 +1,14 @@
+//- Portfolio work card with hover/focus overlay
+mixin work-card(work)
+  article.work-card(
+    class=[`work-card--${work.id}`, work.hideModifier ? `work-card--${work.hideModifier}` : '']
+    data-category=work.category
+    tabindex="0"
+  )
+    +picture(work.image, work.alt, 358, 282, true, 'work-card__img')
+    .work-card__overlay
+      span.work-card__plus
+        +icon('plus', 20)
+      h3.work-card__title= work.title
+      i.work-card__line
+      span.work-card__cat= work.categoryLabel
