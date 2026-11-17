@@ -1,0 +1,18 @@
+section.section(aria-labelledby="cl-h")
+  .wrap
+    +section-head('Clients & kind words', 'cl-h', 'Some of the teams that trusted us with their brands.')
+    ul.clients
+      each client in clients
+        li.clients__item(class=`clients__item--${client.modifier}`)= client.name
+    figure.quote
+      span.quote__mark(aria-hidden="true") “
+      blockquote.quote__text= testimonial.text
+      figcaption.quote__caption
+        span.quote__avatar= testimonial.initials
+        span
+          b.quote__author= testimonial.author
+          br
+          small.quote__role= testimonial.role
+        span.quote__dots(aria-hidden="true")
+          - for (let i = 0; i < testimonial.totalSlides; i++)
+            i.quote__dot(class={ 'quote__dot--active': i === testimonial.activeSlide })
