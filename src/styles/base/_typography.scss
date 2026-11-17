@@ -1,16 +1,20 @@
-*, html, body {
-  font-family: "Montserrat", sans-serif;
+@use '../abstracts' as *;
+
+body {
+  font: 400 #{rem(14)} / #{rem(22)} var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  padding-top: var(--header-h);
 }
 
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  @include focus-ring;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
+.sr-only {
+  @include visually-hidden;
 }
 
-a:hover {
-  text-decoration: underline;
+.u-red {
+  color: var(--color-accent);
 }

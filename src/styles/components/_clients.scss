@@ -1,0 +1,97 @@
+@use '../abstracts' as *;
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin-bottom: 32px;
+
+  &__item {
+    flex: 1 1 50%;
+    text-align: center;
+    font: 700 #{rem(20)} var(--font-head);
+    color: var(--color-muted);
+    opacity: 0.8;
+
+    @include mq(md) {
+      flex-basis: 33.33%;
+    }
+
+    @include mq(lg) {
+      flex-basis: 16.66%;
+    }
+
+    &--l2,
+    &--l5 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+    }
+
+    &--l3 {
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.quote {
+  padding: 32px var(--pad);
+  background: var(--color-bg-light);
+
+  &__mark {
+    font: 700 #{rem(48)} / 1 var(--font-body);
+    color: var(--color-accent);
+  }
+
+  &__text {
+    font: 300 var(--fs-quote) / 1.6 var(--font-body);
+    color: var(--color-text-dark);
+    margin: 8px 0 24px;
+  }
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: rem(12);
+  }
+
+  &__avatar {
+    @include flex-center(grid);
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    color: var(--color-white);
+    font: 400 #{rem(12)} var(--font-head);
+  }
+
+  &__author {
+    font: 400 #{rem(12)} var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+  }
+
+  &__role {
+    color: var(--color-muted);
+  }
+
+  &__dots {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 2px;
+    background: var(--color-border);
+
+    &--active {
+      width: 20px;
+      background: var(--color-accent);
+    }
+  }
+}

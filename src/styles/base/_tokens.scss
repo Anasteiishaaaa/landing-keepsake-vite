@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --font-head: #{map.get($fonts, 'head')};
+  --font-body: #{map.get($fonts, 'body')};
+  --font-script: #{map.get($fonts, 'script')};
+  --pad: 20px;
+  --sec: 56px;
+  --max: 1100px;
+  --header-h: 64px;
+  --fs-h1: #{rem(26)};
+  --fs-cta: #{rem(22)};
+  --fs-nav: #{rem(12)};
+  --fs-quote: #{rem(16)};
+  --fs-stat: #{rem(38)};
+  --fs-logo: #{rem(22)};
+  --logo-k: 34px;
+  --ico: 72px;
+  --thumb: 96px;
+  --gap-works: 12px;
+  --card-ratio: 1 / 0.72;
+
+  @include mq(md) {
+    --pad: 40px;
+    --sec: 72px;
+    --fs-h1: #{rem(32)};
+    --fs-cta: #{rem(24)};
+    --fs-nav: #{rem(13)};
+    --fs-quote: #{rem(19)};
+    --fs-stat: #{rem(40)};
+    --fs-logo: #{rem(26)};
+    --logo-k: 40px;
+    --ico: 96px;
+    --thumb: 150px;
+    --card-ratio: 1 / 0.79;
+  }
+
+  @include mq(lg) {
+    --pad: 90px;
+    --sec: 90px;
+    --fs-h1: #{rem(40)};
+    --fs-cta: #{rem(28)};
+    --fs-quote: #{rem(22)};
+    --fs-stat: #{rem(48)};
+    --gap-works: 14px;
+  }
+}
