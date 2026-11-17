@@ -3,7 +3,7 @@ section#works.section(aria-labelledby="works-h")
     each cat in filterCategories
       input.filter__radio(type="radio" name="f" id=cat.id checked=cat.checked)
     .works-head
-      +section-head('Our awesome works', 'works-h')
+      +section-head("Our awesome works", "works-h")
       .chips(role="group" aria-label="Filter works")
         each cat in filterCategories
           label.chips__item(for=cat.id)= cat.label
@@ -11,4 +11,4 @@ section#works.section(aria-labelledby="works-h")
       each work in works
         +work-card(work)
     .works-more
-      +btn('Load more works', '#works', 'ghost')
+      +btn("Load more works", "#works", "ghost")

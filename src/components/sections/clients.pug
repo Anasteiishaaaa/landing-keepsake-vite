@@ -1,6 +1,10 @@
 section.section(aria-labelledby="cl-h")
   .wrap
-    +section-head('Clients & kind words', 'cl-h', 'Some of the teams that trusted us with their brands.')
+    +section-head(
+      "Clients & kind words",
+      "cl-h",
+      "Some of the teams that trusted us with their brands.",
+    )
     ul.clients
       each client in clients
         li.clients__item(class=`clients__item--${client.modifier}`)= client.name
@@ -15,4 +19,4 @@ section.section(aria-labelledby="cl-h")
           small.quote__role= testimonial.role
         span.quote__dots(aria-hidden="true")
           - for (let i = 0; i < testimonial.totalSlides; i++)
-            i.quote__dot(class={ 'quote__dot--active': i === testimonial.activeSlide })
+            i.quote__dot(class={ "quote__dot--active": i === testimonial.activeSlide })

@@ -10,14 +10,14 @@ header.header
       ul.nav__list
         each item in navItems
           li.nav__item
-            a.nav__link(href=item.href class={ 'nav__link--active': item.active })= item.label
+            a.nav__link(href=item.href class={ "nav__link--active": item.active })= item.label
       a.header__fav(href="#subscribe" aria-label="Favourites")
-        +icon('heart', 16)
+        +icon("heart", 16)
       .nav__extra
-        +btn('Contact us', '#contact')
-          +icon('mail', 16)
-        +btn('Favourites', '#top', 'ghost')
-          +icon('heart', 14)(class="u-red")
+        +btn("Contact us", "#contact")
+          +icon("mail", 16)
+        +btn("Favourites", "#top", "ghost")
+          +icon("heart", 14).u-red
         .nav__say
           p.nav__cap= contactInfo.caption
           p= contactInfo.email

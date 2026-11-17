@@ -13,17 +13,24 @@ footer#contact.footer
         h2.footer__title Newsletter
         p.newsletter__text Fresh case studies and design notes, once a month.
         p#done.newsletter__ok(role="status")
-          +icon('check-circle')
+          +icon("check-circle")
           | You’re in! Check your inbox to confirm.
         form.newsletter__form(action="#done" method="get")
           .newsletter__row
             label.sr-only(for="email") Email address
-            input#email.newsletter__input(type="email" name="email" placeholder="Your email address" required aria-describedby="email-err")
-            +btn('Subscribe')
+            input#email.newsletter__input(
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              required
+              aria-describedby="email-err"
+            )
+            +btn("Subscribe")
             p#email-err.newsletter__err Please enter a valid email address.
           label.newsletter__agree
             input(type="checkbox" required)
-            |  I agree to the privacy policy
+            |
+            | I agree to the privacy policy
     .footer__bottom
       p © 2026 Keepsake. All rights reserved.
       ul.social

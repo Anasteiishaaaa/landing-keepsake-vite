@@ -1,5 +1,5 @@
 //- Responsive picture element with AVIF, WebP and JPEG fallback
-mixin picture(name, alt, width = 358, height = 282, lazy = true, imgClass = 'work-card__img', sizes = '(min-width: 1280px) 358px, (min-width: 768px) 50vw, 100vw')
+mixin picture(name, alt, width = 358, height = 282, lazy = true, imgClass = "work-card__img", sizes = "(min-width: 1280px) 358px, (min-width: 768px) 50vw, 100vw")
   picture
     source(
       type="image/avif"
@@ -17,7 +17,7 @@ mixin picture(name, alt, width = 358, height = 282, lazy = true, imgClass = 'wor
       alt=alt
       width=width
       height=height
-      loading=lazy ? 'lazy' : false
+      loading=lazy ? "lazy" : false
       decoding="async"
-      fetchpriority=lazy ? false : 'high'
+      fetchpriority=lazy ? false : "high"
     )

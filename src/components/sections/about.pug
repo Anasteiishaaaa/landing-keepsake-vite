@@ -1,12 +1,16 @@
 section#about.section(aria-labelledby="do-h")
   .wrap
-    +section-head('What do we do', 'do-h', 'We are a small team of designers and makers who help brands look their best online and offline.')
+    +section-head(
+      "What do we do",
+      "do-h",
+      "We are a small team of designers and makers who help brands look their best online and offline.",
+    )
     ul.services
       each service in services
         li.services__item
           span.services__icon
-            if service.iconType === 'heart'
-              +icon('heart', 36)(class="u-red")
+            if service.iconType === "heart"
+              +icon("heart", 36).u-red
             else
               +icon(`service-${service.iconType}`)
           h3.services__title= service.title

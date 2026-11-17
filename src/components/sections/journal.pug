@@ -1,10 +1,18 @@
 section#journal.section(aria-labelledby="j-h")
   .wrap
-    +section-head('From the journal', 'j-h', 'Notes on process, case studies and things that inspire us.')
+    +section-head(
+      "From the journal",
+      "j-h",
+      "Notes on process, case studies and things that inspire us.",
+    )
     .posts
       each post in journalPosts
         article.post-card
-          .post-card__thumb(class=`post-card__thumb--${post.thumbClass}` role="img" aria-label="Journal preview")
+          .post-card__thumb(
+            class=`post-card__thumb--${post.thumbClass}`
+            role="img"
+            aria-label="Journal preview"
+          )
           .post-card__body
             p.post-card__meta= post.meta
             h3.post-card__title= post.title
